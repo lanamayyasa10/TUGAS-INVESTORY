@@ -3,6 +3,8 @@ $title = 'Dashboard';
 require __DIR__ . '/../layout/header.php';
 ?>
 
+<link rel="stylesheet" href="/inventory-management/public/assets/css/dashboard.css">
+
 <div class="stats-grid">
     <div class="stat-card"><span>Total Jenis Barang</span><strong><?= $stats['items'] ?></strong></div>
     <div class="stat-card"><span>Total Kuantitas Stok</span><strong><?= $stats['quantity'] ?></strong></div>

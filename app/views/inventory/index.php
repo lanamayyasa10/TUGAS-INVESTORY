@@ -3,6 +3,8 @@ $title = 'Inventory';
 require __DIR__ . '/../layout/header.php';
 ?>
 
+<link rel="stylesheet" href="/inventory-management/public/assets/css/inventory.css">
+
 <div class="toolbar">
     <form class="search-form" method="GET">
         <input type="hidden" name="page" value="inventory">
