@@ -54,6 +54,45 @@ class Admin
         return $stmt->execute();
     }
 
+
+    public function updateField(int $id, string $field, string $value): bool
+    {
+    // Update password dengan hashing
+    if ($field === 'password') {
+
+        $hash = password_hash($value, PASSWORD_DEFAULT);
+
+        $stmt = $this->db->prepare(
+            "UPDATE admins SET password = ? WHERE id = ?"
+        );
+
+        $stmt->bind_param("si", $hash, $id);
+
+    } else {
+
+        // Field yang diperbolehkan
+        $allowedFields = [
+            'name',
+            'contact',
+            'email'
+        ];
+
+        if (!in_array($field, $allowedFields, true)) {
+            return false;
+        }
+
+        // Karena nama kolom tidak bisa menggunakan ?
+        // field harus berasal dari whitelist di atas.
+        $sql = "UPDATE admins SET $field = ? WHERE id = ?";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->bind_param("si", $value, $id);
+    }
+
+    return $stmt->execute();
+    }
+
     public function delete(int $id): bool
     {
         $stmt = $this->db->prepare("DELETE FROM admins WHERE id = ?");

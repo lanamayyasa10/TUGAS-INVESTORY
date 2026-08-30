@@ -72,4 +72,31 @@ class Vendor
         $stmt->bind_param("i", $itemId);
         return $stmt->execute();
     }
+    public function search(string $search): mysqli_result
+    {
+    $stmt = $this->db->prepare("
+        SELECT
+            id,
+            name,
+            contact
+        FROM vendors
+        WHERE
+            name LIKE ?
+            OR contact LIKE ?
+        ORDER BY name ASC
+        LIMIT 5
+    ");
+
+    $term = "%$search%";
+
+    $stmt->bind_param(
+        "ss",
+        $term,
+        $term
+    );
+
+    $stmt->execute();
+
+    return $stmt->get_result();
+    }
 }

@@ -43,6 +43,44 @@ class Inventory
         return $this->db->query($sql);
     }
 
+    public function search(string $search): mysqli_result
+    {
+    $stmt = $this->db->prepare("
+        SELECT
+            i.id,
+            i.item_name,
+            i.item_type,
+            i.serial_number,
+            s.warehouse_name
+        FROM inventory i
+        INNER JOIN storage_units s ON s.id = i.warehouse_id
+        LEFT JOIN vendors v ON v.id = i.vendor_id
+        WHERE
+            i.item_name LIKE ?
+            OR i.item_type LIKE ?
+            OR i.serial_number LIKE ?
+            OR s.warehouse_name LIKE ?
+            OR v.name LIKE ?
+        ORDER BY i.item_name ASC
+        LIMIT 5
+    ");
+
+    $term = "%$search%";
+
+    $stmt->bind_param(
+        "sssss",
+        $term,
+        $term,
+        $term,
+        $term,
+        $term
+    );
+
+    $stmt->execute();
+
+    return $stmt->get_result();
+}
+
     public function find(int $id): ?array
     {
         $stmt = $this->db->prepare($this->baseSql() . " WHERE i.id=? LIMIT 1");

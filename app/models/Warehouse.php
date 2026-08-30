@@ -50,4 +50,32 @@ class Warehouse
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
+
+    public function search(string $search): mysqli_result
+    {
+    $stmt = $this->db->prepare("
+        SELECT
+            id,
+            warehouse_name,
+            location
+        FROM storage_units
+        WHERE
+            warehouse_name LIKE ?
+            OR location LIKE ?
+        ORDER BY warehouse_name ASC
+        LIMIT 5
+    ");
+
+    $term = "%$search%";
+
+    $stmt->bind_param(
+        "ss",
+        $term,
+        $term
+    );
+
+    $stmt->execute();
+
+    return $stmt->get_result();
+    }
 }

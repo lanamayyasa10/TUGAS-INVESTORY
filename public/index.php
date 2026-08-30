@@ -4,6 +4,42 @@ require_once __DIR__ . '/../config/auth.php';
 $page = $_GET['page'] ?? (isset($_SESSION['admin_id']) ? 'dashboard' : 'login');
 
 switch ($page) {
+
+    case 'admin':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->index();
+    break;
+
+    case 'admin-create':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->create();
+    break;
+
+    case 'admin-store':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->store();
+    break;
+
+    case 'admin-edit':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->edit();
+    break;
+
+    case 'admin-update':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->update();
+    break;
+
+    case 'admin-update-field':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->updateField();
+    break;
+
+    case 'admin-delete':
+    require_once __DIR__ . '/../app/controllers/AdminController.php';
+    (new AdminController())->delete();
+    break;
+
     case 'login':
         require_once __DIR__ . '/../app/controllers/AuthController.php';
         (new AuthController())->showLogin();
@@ -22,6 +58,11 @@ switch ($page) {
     case 'dashboard':
         require_once __DIR__ . '/../app/controllers/DashboardController.php';
         (new DashboardController())->index();
+        break;
+
+    case 'search':
+        require_once __DIR__ . '/../app/controllers/SearchController.php';
+        (new SearchController())->index();
         break;
 
     case 'inventory':
