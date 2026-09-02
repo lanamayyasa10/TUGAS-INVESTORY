@@ -2,6 +2,9 @@
 $title = 'Transaksi Stok';
 require __DIR__ . '/../layout/header.php';
 ?>
+
+<link rel="stylesheet" href="/inventory-management/public/assets/css/transaksi-stok.css">
+
 <div class="toolbar">
     <span>Riwayat barang masuk dan keluar</span>
     <a class="btn" href="index.php?page=transaction-create">+ Transaksi</a>

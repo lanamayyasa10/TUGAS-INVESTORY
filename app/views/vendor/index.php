@@ -2,6 +2,9 @@
 $title = 'Vendor / Supplier';
 require __DIR__ . '/../layout/header.php';
 ?>
+
+<link rel="stylesheet" href="/inventory-management/public/assets/css/vendor.css">
+
 <div class="toolbar">
     <span>Daftar vendor / supplier</span>
     <a class="btn" href="index.php?page=vendor-create">+ Vendor Baru</a>

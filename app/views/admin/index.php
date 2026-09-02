@@ -3,6 +3,8 @@ $title = 'Profil Admin';
 require __DIR__ . '/../layout/header.php';
 ?>
 
+<link rel="stylesheet" href="/inventory-management/public/assets/css/edit-profil.css">
+
 <div class="profile-card">
 
     <div class="profile-header">

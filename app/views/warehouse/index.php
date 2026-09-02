@@ -2,6 +2,9 @@
 $title = 'Gudang';
 require __DIR__ . '/../layout/header.php';
 ?>
+
+<link rel="stylesheet" href="/inventory-management/public/assets/css/gudang.css">
+
 <div class="toolbar">
     <span>Daftar storage unit / gudang</span>
     <a class="btn" href="index.php?page=warehouse-create">+ Gudang Baru</a>

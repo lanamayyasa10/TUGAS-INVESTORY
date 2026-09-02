@@ -1,0 +1,386 @@
+/* ========================================
+   INVENTORY MANAGEMENT - LOGIN
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7ff 55%, #edf3ff 100%);
+    color: #172554;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   CONTAINER UTAMA
+======================================== */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 6%;
+}
+
+
+/* ========================================
+   CARD LOGIN
+======================================== */
+
+.login-container,
+.login-card {
+    width: 100%;
+    max-width: 540px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 42px;
+    box-shadow: 0 20px 50px rgba(30, 64, 175, 0.12);
+}
+
+
+/* ========================================
+   JUDUL
+======================================== */
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #64748b;
+}
+
+
+/* ========================================
+   SUBTITLE
+======================================== */
+
+.subtitle {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   LABEL
+======================================== */
+
+label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   INPUT
+======================================== */
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d5dce8;
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    font-size: 15px;
+    color: #1e293b;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+
+/* INPUT SAAT DIKLIK */
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+
+/* PLACEHOLDER */
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* ========================================
+   GROUP FORM
+======================================== */
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+
+/* ========================================
+   BUTTON LOGIN
+======================================== */
+
+button[type="submit"],
+.btn-login {
+    width: 100%;
+    height: 52px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* HOVER BUTTON */
+
+button[type="submit"]:hover,
+.btn-login:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(37, 99, 235, 0.30);
+}
+
+
+/* SAAT DITEKAN */
+
+button[type="submit"]:active,
+.btn-login:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   REMEMBER ME
+======================================== */
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   LINK
+======================================== */
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   LOGIN OPTIONS
+======================================== */
+
+.login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 5px 0 25px;
+
+    font-size: 14px;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0;
+
+    font-weight: 400;
+    color: #475569;
+}
+
+
+/* ========================================
+   LOGIN ICON
+======================================== */
+
+.login-icon {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf2ff;
+
+    color: #2563eb;
+
+    font-size: 30px;
+}
+
+
+/* ========================================
+   JUDUL DI TENGAH
+======================================== */
+
+.login-card h2 {
+    text-align: center;
+}
+
+.login-description {
+    text-align: center;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.divider {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 27px 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.login-footer {
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* ========================================
+   EFEK CARD
+======================================== */
+
+.login-card:hover {
+    box-shadow:
+        0 25px 60px rgba(30, 64, 175, 0.15);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .login-page {
+        padding: 25px 18px;
+    }
+
+    .login-card,
+    .login-container {
+        padding: 30px 24px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .login-card,
+    .login-container {
+        padding: 25px 20px;
+    }
+
+    .login-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

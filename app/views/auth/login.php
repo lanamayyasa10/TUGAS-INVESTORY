@@ -2,6 +2,9 @@
 require_once __DIR__ . '/../../../config/helpers.php';
 $flash = getFlash();
 ?>
+
+<link rel="stylesheet" href="/inventory-management/public/assets/css/login.css">
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
